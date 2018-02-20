@@ -16,7 +16,7 @@ public class SchoolController {
 			System.out.println("3. 성적 조회");
 			System.out.println("4. 전체 조회");
 			System.out.println("5. 종       료");
-
+			System.out.println("dd");
 			int button = sc.nextInt();
 			
 			switch(button) {
