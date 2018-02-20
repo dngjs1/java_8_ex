@@ -15,4 +15,14 @@ public class StudentView {
 			System.out.println("---------------");
 		}
 	}
+	
+	public void viewStudent(Student stu) {
+		System.out.println("이름 : "+stu.name);
+		System.out.println("번호 : "+stu.num);
+		System.out.println("국어성적 : "+stu.kor);
+		System.out.println("영어성적 : "+stu.eng);
+		System.out.println("수학성적 : "+stu.math);
+		System.out.println("총점 : "+stu.total);
+		System.out.println("평균 : "+stu.avg);
+	}
 }

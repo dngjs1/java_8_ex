@@ -16,7 +16,6 @@ public class SchoolController {
 			System.out.println("3. 성적 조회");
 			System.out.println("4. 전체 조회");
 			System.out.println("5. 종       료");
-			System.out.println("dd");
 			int button = sc.nextInt();
 			
 			switch(button) {
@@ -30,6 +29,9 @@ public class SchoolController {
 				break;
 			case 3:
 				System.out.println("3. 성적 조회");
+				Student s1 = new Student();
+				s1 = stuService.search(stu);
+				stuView.viewStudent(s1);
 				break;
 			case 4:
 				System.out.println("4. 전체 조회");

@@ -31,14 +31,39 @@ public class StudentService {
 		for(int i=0;i<stu.length;i++) {
 			System.out.println(stu[i].name+" 학생의 국어점수를 입력하세요.");
 			stu[i].kor = sc.nextInt();
-			System.out.println("학생의 영어점수를 입력하세요.");
+			System.out.println(stu[i].name+" 학생의 영어점수를 입력하세요.");
 			stu[i].eng = sc.nextInt();
-			System.out.println("학생의 수학점수를 입력하세요.");
+			System.out.println(stu[i].name+" 학생의 수학점수를 입력하세요.");
 			stu[i].math = sc.nextInt();
 			System.out.println("----------------------------");
 			stu[i].total = stu[i].kor+stu[i].eng+stu[i].math;
 			stu[i].avg = (double)stu[i].total/3;
 		}
 		return stu;
+	}
+	
+	public Student search(Student[] stu) {
+		//번호를 입력받아 학생한명찾기
+		//출력은 뷰에서
+		Scanner sc = new Scanner(System.in);
+		StudentView view = new StudentView();
+		boolean flag=true;
+		int j=0;
+		while(flag) {
+			System.out.println("학생 번호를 입력하세요.");
+			int num = sc.nextInt();
+			int i=0;
+			for(i=0;i<stu.length;i++) {
+				if(stu[i].num==num) {
+					flag=false;
+					j=i;
+				}
+			}
+			if(flag==true) {
+				System.out.println("찾는 학생이 없습니다.");
+				System.out.println("-------------------");
+			}
+		}
+		return stu[j];
 	}
 }
