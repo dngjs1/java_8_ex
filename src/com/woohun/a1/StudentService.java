@@ -14,7 +14,7 @@ public class StudentService {
 		System.out.println("학생 수를 입력하세요.");
 		int n = sc.nextInt();
 		
-		Student stu1[] = new Student[n];
+		Student[] stu1 = new Student[n];
 		for(int i=0;i<stu1.length;i++) {
 			Student s1 = new Student();
 			System.out.println("이름을 입력하세요.");
@@ -23,14 +23,22 @@ public class StudentService {
 			s1.num = sc.nextInt();
 			stu1[i] = s1;
 		}
-		/*Student stu1[] = new Student[n];
-		for(int i=0;i<stu1.length;i++) {
-			System.out.println("이름을 입력하세요.");
-			stu1[i].name = sc.next();
-			System.out.println("번호를 입력하세요.");
-			stu1[i].num = sc.nextInt();
-		}*/
 		return stu1;
-		
+	}
+	
+	public Student[] addPoint(Student[] stu) {
+		Scanner sc = new Scanner(System.in);
+		for(int i=0;i<stu.length;i++) {
+			System.out.println(stu[i].name+" 학생의 국어점수를 입력하세요.");
+			stu[i].kor = sc.nextInt();
+			System.out.println("학생의 영어점수를 입력하세요.");
+			stu[i].eng = sc.nextInt();
+			System.out.println("학생의 수학점수를 입력하세요.");
+			stu[i].math = sc.nextInt();
+			System.out.println("----------------------------");
+			stu[i].total = stu[i].kor+stu[i].eng+stu[i].math;
+			stu[i].avg = (double)stu[i].total/3;
+		}
+		return stu;
 	}
 }

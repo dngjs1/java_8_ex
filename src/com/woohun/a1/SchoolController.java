@@ -26,6 +26,7 @@ public class SchoolController {
 				break;
 			case 2:
 				System.out.println("2. 성적 입력");
+				stu = stuService.addPoint(stu);
 				break;
 			case 3:
 				System.out.println("3. 성적 조회");
